@@ -148,10 +148,28 @@
       img.style.animationDelay = Math.random() * 5 + 's';
       img.style.width = 20 + Math.random() * 40 + 'px';
       rain.appendChild(img);
+
+      const CA_ADDRESS = '0xYOUR_CONTRACT_ADDRESS';
+const caLink = document.getElementById('caLink');
+
+
+if (caLink) {
+caLink.addEventListener('click', async () => {
+try {
+await navigator.clipboard.writeText(CA_ADDRESS);
+const old = caLink.textContent;
+caLink.textContent = 'Copied!';
+setTimeout(() => (caLink.textContent = old), 1200);
+} catch (e) {
+alert('Copy failed');
+}
+});
+
     }
   </script>
 </body>
 </html>
+
 
 
 
